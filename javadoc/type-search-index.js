@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"eci.edu.arsw.util","l":"DataReader"},{"p":"eci.edu.arsw.linkedList","l":"LinkedList"},{"p":"eci.edu.arsw","l":"Main"},{"p":"eci.edu.arsw.calculator","l":"Mean"},{"p":"eci.edu.arsw.linkedList","l":"Node"},{"p":"eci.edu.arsw.calculator","l":"StandardDeviation"}];updateSearchResults();
