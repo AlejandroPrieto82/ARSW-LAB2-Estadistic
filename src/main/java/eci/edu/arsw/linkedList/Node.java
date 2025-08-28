@@ -1,39 +1,27 @@
-package main.java.eci.edu.arsw.linkedList;
+package eci.edu.arsw.linkedList;
 
+public class Node {
+    private double data;
+    private Node next;
 
-
-public class Node<T> {
-    private T data;
-    private Node<T> next;
-
-
-    public Node(T data, Node<T> next){
+    public Node(double data, Node next) {
         this.data = data;
         this.next = next;
     }
 
-
-
-    public T getData() {
+    public double getData() {
         return data;
     }
 
-
-    public void setData(T data) {
+    public void setData(double data) {
         this.data = data;
     }
 
-
-    public Node<T> getNext() {
+    public Node getNext() {
         return next;
     }
 
-
-    public void setNext(Node<T> next) {
+    public void setNext(Node next) {
         this.next = next;
     }
-
-    
-
-
 }

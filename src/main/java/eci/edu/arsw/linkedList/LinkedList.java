@@ -1,22 +1,23 @@
-package main.java.eci.edu.arsw.linkedList;
+package eci.edu.arsw.linkedList;
+
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MyLinkedList<T> implements Iterable<T> {
+public class LinkedList implements Iterable<Double> {
 
-    private Node<T> head;
-    private Node<T> tail;
+    private Node head;
+    private Node tail;
     private int size;
 
-    public MyLinkedList() {
+    public LinkedList() {
         head = null;
         tail = null;
         size = 0;
     }
 
-    public void add(T data) {
-        Node<T> newNode = new Node<>(data, null);
+    public void add(double data) {
+        Node newNode = new Node(data, null);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -35,10 +36,9 @@ public class MyLinkedList<T> implements Iterable<T> {
         return size == 0;
     }
 
-    
-    public T removeHead() {
+    public double removeHead() {
         if (isEmpty()) throw new NoSuchElementException("La lista está vacía");
-        T data = head.getData();
+        double data = head.getData();
         head = head.getNext();
         if (head == null) {
             tail = null;
@@ -47,17 +47,16 @@ public class MyLinkedList<T> implements Iterable<T> {
         return data;
     }
 
-    
-    public T removeTail() {
+    public double removeTail() {
         if (isEmpty()) throw new NoSuchElementException("La lista está vacía");
 
-        T data = tail.getData();
+        double data = tail.getData();
 
         if (head == tail) { 
             head = null;
             tail = null;
         } else {
-            Node<T> current = head;
+            Node current = head;
             while (current.getNext() != tail) {
                 current = current.getNext();
             }
@@ -68,19 +67,17 @@ public class MyLinkedList<T> implements Iterable<T> {
         return data;
     }
 
-    
-    public boolean removeData(T data) {
+    public boolean removeData(double data) {
         if (isEmpty()) return false;
 
-        
-        if (head.getData().equals(data)) {
+        if (head.getData() == data) {
             removeHead();
             return true;
         }
 
-        Node<T> current = head;
+        Node current = head;
         while (current.getNext() != null) {
-            if (current.getNext().getData().equals(data)) {
+            if (current.getNext().getData() == data) {
                 if (current.getNext() == tail) {
                     tail = current;
                 }
@@ -95,7 +92,7 @@ public class MyLinkedList<T> implements Iterable<T> {
 
     public void print() {
         System.out.print("[ ");
-        Node<T> current = head;
+        Node current = head;
         while (current != null) {
             System.out.print(current.getData());
             if (current.getNext() != null) {
@@ -107,9 +104,9 @@ public class MyLinkedList<T> implements Iterable<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
-        return new Iterator<T>() {
-            private Node<T> current = head;
+    public Iterator<Double> iterator() {
+        return new Iterator<Double>() {
+            private Node current = head;
 
             @Override
             public boolean hasNext() {
@@ -117,9 +114,9 @@ public class MyLinkedList<T> implements Iterable<T> {
             }
 
             @Override
-            public T next() {
+            public Double next() {
                 if (!hasNext()) throw new NoSuchElementException();
-                T data = current.getData();
+                double data = current.getData();
                 current = current.getNext();
                 return data;
             }
