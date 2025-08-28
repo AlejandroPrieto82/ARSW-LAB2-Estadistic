@@ -8,7 +8,7 @@ import eci.edu.arsw.calculator.StandardDeviation;
 public class Main {
     public static void main(String[] args) {
         try {
-            LinkedList list = DataReader.readFile("src/main/resources/table3.txt");
+            LinkedList list = DataReader.readFile("src/main/resources/table1.2.txt");
 
             if (list.isEmpty()) {
                 System.out.println("El archivo no tiene datos.");
